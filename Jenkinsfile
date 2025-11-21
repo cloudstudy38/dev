@@ -15,14 +15,15 @@ pipeline {
         stage('Deploy Dev WordPress') {
             steps {
                 sh '''
-                mkdir -p $COMPOSE_DIR
-                cp -r * $COMPOSE_DIR/
-                cd $COMPOSE_DIR
+                    mkdir -p $COMPOSE_DIR
+                    cp -r * $COMPOSE_DIR/
+                    cd $COMPOSE_DIR
 
-                docker-compose down
-                docker-compose pull
-                docker-compose up -d --build
+                    /usr/local/bin/docker-compose down
+                    /usr/local/bin/docker-compose pull
+                    /usr/local/bin/docker-compose up -d --build
                 '''
+
             }
         }
     }
