@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/cloudstudy38/dev.git' credentialsID: 'github-pat'
+                git branch: 'main', url: 'https://github.com/cloudstudy38/dev.git' credentialsId: 'github-pat'
             }
         }
 
